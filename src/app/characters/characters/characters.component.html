@@ -1,0 +1,17 @@
+
+<nav class="charactersNav"> 
+  <input type="text" class="searchTerm" placeholder="Search character...">
+</nav>
+<section id="charactersSection">
+  <ul id="charactersList">
+    <li *ngFor="let character of characters" class="itemCharList">
+      <div class="cardChar">
+        <img src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" alt="No photo available" />
+        <div class="infoChar">
+          <h4> {{ character.name }} </h4>
+          <p>{{ character.description }}</p>
+        </div>
+      </div>
+    </li>
+  </ul>  
+</section>

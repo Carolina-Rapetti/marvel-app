@@ -1,0 +1,11 @@
+.main-header {
+    overflow: hidden;
+    background-color: red;
+    
+}
+header h1 {
+    color: white;
+    font-family: "Roboto","Trebuchet MS",Helvetica,Arial,sans-serif;
+    text-align: center;
+    width: 100%;
+}

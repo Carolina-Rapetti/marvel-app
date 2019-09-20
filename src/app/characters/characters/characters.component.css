@@ -1,0 +1,42 @@
+.charactersNav {
+    background-color: black;
+    color: dimgray;
+}
+
+.searchTerm {
+    padding: 3px;
+    margin: 5px;
+    border: 0px;
+    border-bottom: 2px solid dimgray;
+    background-color: black;
+}
+#charactersSection {
+    background-color: #e3e2e1;
+
+} 
+#charactersList {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 50%;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.itemCharList {
+    border-bottom: 1px solid #000000;
+    background-color: #f5f4f2;
+    padding: 10px;
+}
+.cardChar {
+    padding: 15px;
+    display: flex;
+    
+}
+.cardChar div {
+    padding: 10px;
+    width: 80%;
+}
+.cardChar img {
+    padding: 5px;
+    width: 20%;
+}
