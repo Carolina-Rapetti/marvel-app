@@ -14,13 +14,13 @@ import { CharactersModule } from './characters/characters.module';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CharactersModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

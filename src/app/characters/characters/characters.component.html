@@ -1,9 +1,9 @@
 
 <nav class="charactersNav"> 
-  <input type="text" class="searchTerm" placeholder="Search character...">
+  <input type="text" class="searchTerm" placeholder="Search character..." [formControl]="queryField"/>
 </nav>
 <section id="charactersSection">
-  <ul id="charactersList">
+  <ul id="charactersList" #charactersList>
     <li *ngFor="let character of characters" class="itemCharList">
       <div class="cardChar">
         <img src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" alt="No photo available" />

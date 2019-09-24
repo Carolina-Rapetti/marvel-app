@@ -12,12 +12,14 @@ export class MarvelService {
   constructor(private http: HttpClient) { }
 
   getCharacters(limit: number): Observable<ApiResponse> {
-    //const hashValue = 
     const options = limit <= 100?
       { params: new HttpParams().set("apikey", API_PUBLIC_KEY).set('limit', limit.toString()) } : 
       { params: new HttpParams().set("apikey", API_PUBLIC_KEY)};
     return this.http.get<ApiResponse>(URL_CHARACTERS, options);
   }
+  /* getCharactersByName(name: string): Observable<ApiResponse>{
+
+  } */
 
   
 }
