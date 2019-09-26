@@ -1,0 +1,15 @@
+<nav>
+  <div class="navTitle">
+    <h1> {{ characterInfo }} </h1>
+    <h2> Comics List </h2>
+</div>
+</nav>
+<section class="comicsSection">
+  <div id="comicsGrid">
+    <a *ngFor="let comic of comicsList">
+      <img src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt="No photo available" />
+    </a>
+  </div>
+  
+
+</section>

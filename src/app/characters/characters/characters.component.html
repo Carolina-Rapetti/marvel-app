@@ -1,10 +1,15 @@
 
 <nav class="charactersNav"> 
-  <input type="text" class="searchTerm" placeholder="Search character..." [formControl]="queryField"/>
+  <input type="text" class="searchTerm" list="searchList" placeholder="Search character..." [formControl]="queryField"/>
+  <datalist id="searchList">
+    <option *ngFor="let opt of suggestions">
+      {{ opt.name }}   
+    </option>
+  </datalist>
 </nav>
 <section id="charactersSection">
   <ul id="charactersList" #charactersList>
-    <li *ngFor="let character of characters" class="itemCharList">
+    <li *ngFor="let character of characters" class="itemCharList" (click)="charClicked(character)">
       <div class="cardChar">
         <img src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" alt="No photo available" />
         <div class="infoChar">

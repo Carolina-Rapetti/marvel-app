@@ -1,6 +1,14 @@
+export interface ApiCharData {
+    results: Character[];
+    [propName: string]: any
+}
+export interface ApiCharResponse {
+    data: ApiCharData;
+    [propName: string]: any
+}
 export interface Character {
     //quitar propiedades que no se usan
-    //id: number,
+    id: number,
     name: string,
     description: string,
     modified: Date,

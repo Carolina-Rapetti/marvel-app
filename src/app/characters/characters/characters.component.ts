@@ -4,6 +4,7 @@ import { MarvelService } from 'src/app/services/marvel.service';
 import { Character } from 'src/app/interfaces/character';
 import { fromEvent,  } from 'rxjs';
 import { debounceTime, map, filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -14,6 +15,7 @@ export class CharactersComponent implements OnInit {
 
   @ViewChild('charactersList') scrollableList: ElementRef;
   characters: Character[];
+  suggestions: Character[] = new Array<Character>();
   queryField: FormControl = new FormControl();
   private charactersToShow: Character[];
   private actualPage: number;
@@ -21,7 +23,7 @@ export class CharactersComponent implements OnInit {
 
   
 
-  constructor(private marvelService: MarvelService) { }
+  constructor(private marvelService: MarvelService, private router: Router) { }
 
   ngOnInit() {
     this.charactersToShow = new Array<Character>();
@@ -36,9 +38,21 @@ export class CharactersComponent implements OnInit {
       filter((res:Element) => (res.scrollHeight-res.scrollTop === res.clientHeight))      
    ).subscribe(success => this.onScroll()); 
 
-   this.queryField.valueChanges.subscribe( result => console.log(result));
+   this.queryField.valueChanges.
+   subscribe( result => {
+    if (result.length>0)
+      this.marvelService.getCharacters(20, result).subscribe((response) => {
+        //cargar datos en la busqueda
+        this.suggestions = response.data.results;
+        console.log(this.suggestions);
+      },
+      (err) => {
+        console.log(err);
+      //mostrar error
+   })});
 
   }
+  //sacar evento en ngOn
 
   loadCharacters(){
     this.marvelService.getCharacters(100).subscribe(
@@ -67,8 +81,10 @@ export class CharactersComponent implements OnInit {
   }
 
 
-  itemClick(character:Character){
+  charClicked(character:Character){
     console.log(character);
+    this.router.navigate([character.id,"comics"],{ queryParams: { charInfo: character.name } });
+    // Navigate to /results?page=1
 
   }
 

@@ -1,0 +1,34 @@
+nav {
+    background-color: #000000;
+    color: #d1d1d1;
+    text-align: center;
+}
+.navTitle {
+    padding: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navTitle h1 {
+    font-size: 30px;
+    margin: 2px;
+}
+.navTitle h2 {
+    font-size: 15px;
+    margin: 4px;
+}
+.comicsSection {
+    background-color: #e3e2e1;    
+}
+#comicsGrid {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#comicsGrid a{
+    width: 50%;
+}
+#comicsGrid a img{
+    width: 30%;
+    padding: 5px;
+}
