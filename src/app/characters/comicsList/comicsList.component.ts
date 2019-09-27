@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Character } from 'src/app/interfaces/character';
 import { MarvelService } from 'src/app/services/marvel.service';
 import { Comic } from 'src/app/interfaces/comic';
 
 @Component({
-  selector: 'app-comics',
-  templateUrl: './comics.component.html',
-  styleUrls: ['./comics.component.css']
+  selector: 'app-comicslist',
+  templateUrl: './comicsList.component.html',
+  styleUrls: ['./comicsList.component.css']
 })
-export class ComicsComponent implements OnInit {
+export class ComicsListComponent implements OnInit {
   private charId: string;
   characterInfo: string;
   comicsList: Comic[] = new Array<Comic>();

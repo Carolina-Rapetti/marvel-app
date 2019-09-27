@@ -1,0 +1,61 @@
+nav {
+    background-color: #000000;
+    color: #d1d1d1;
+    text-align: center;
+}
+.navTitle {
+    padding: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navTitle h1 {
+    font-size: 30px;
+    margin: 2px;
+}
+.navTitle h2 {
+    font-size: 15px;
+    margin: 4px;
+}
+.comicSection {
+    background-color: #faf7f7;    
+    font-family: Arial, Helvetica, sans-serif;  
+}
+.contenedor {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.contenedor div {
+    padding: 10px;
+}
+.comicSection h3 {
+    color: #a8a8a8;
+}
+#contLista {
+    height: 500px;
+    padding: 10px;
+}
+
+#charactersList {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    height: 80%;
+    overflow: auto;
+    flex: none;
+}
+.itemCharList {
+    border-bottom: 1px solid #000000;
+    background-color: #ededed; 
+    padding: 10px;
+}
+li:hover {
+    border-color: #777;
+    box-shadow: 3px 3px 5px #333;
+    padding: 6px;
+}
+.cardChar {
+    padding: 15px;
+    display: flex;
+}

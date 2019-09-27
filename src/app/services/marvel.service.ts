@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ApiCharResponse } from '../interfaces/character';
 import { URL_CHARACTERS, API_PUBLIC_KEY, BASE_URL_MARVEL } from '../shared/constants';
-import { ApiComicResponse } from '../interfaces/comic';
+import { ApiComicResponse, Comic } from '../interfaces/comic';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +29,14 @@ export class MarvelService {
       params: new HttpParams().set("apikey", API_PUBLIC_KEY)
     }
     return this.http.get<ApiComicResponse>(URL_CHARACTERS+"/"+id+"/comics", options); 
+  }
+
+  getComicById(id:string):Observable<ApiComicResponse>{
+    const options = {
+      params: new HttpParams().set("apikey", API_PUBLIC_KEY)
+    }
+    return this.http.get<ApiComicResponse>(BASE_URL_MARVEL+"comics"+"/"+id, options);
+
   }
 
   

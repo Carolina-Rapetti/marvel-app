@@ -1,0 +1,36 @@
+<nav>
+  <div class="navTitle">
+    <h1> {{ comic?.title }} </h1>
+    <h2> Details </h2>
+</div>
+</nav>
+<section class="comicSection">
+  <div class="contenedor">
+    <div>
+      <h3>Published on:</h3>
+      <p></p>
+    </div>
+    <div>
+      <h3>Writers:</h3>
+      <p *ngFor="let wr of writers">{{ wr.name }}</p>
+    </div>
+    <div>
+      <h3>Artist:</h3>
+      <p *ngFor="let art of artists">{{ art.name }}</p>
+    </div>
+    <div>
+      <h3>Summary:</h3>
+      <p>{{ comic?.description }}</p>
+    </div>
+    <div id="contLista">
+      <h3>Characters:</h3>
+      <ul id="charactersList">
+        <li *ngFor="let char of comic?.characters.items" class="itemCharList">
+          <div class="cardChar">    
+            <h4> {{ char.name }} </h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

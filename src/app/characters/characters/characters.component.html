@@ -2,10 +2,11 @@
 <nav class="charactersNav"> 
   <input type="text" class="searchTerm" list="searchList" placeholder="Search character..." [formControl]="queryField"/>
   <datalist id="searchList">
-    <option *ngFor="let opt of suggestions">
+    <option *ngFor="let opt of suggestions" [routerLink]="['/opt.id/',comics]">
       {{ opt.name }}   
     </option>
   </datalist>
+  <button (click)="search()">Search</button>
 </nav>
 <section id="charactersSection">
   <ul id="charactersList" #charactersList>

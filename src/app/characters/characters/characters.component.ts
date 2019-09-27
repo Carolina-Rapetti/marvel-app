@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
+ 
 
   @ViewChild('charactersList') scrollableList: ElementRef;
   characters: Character[];
@@ -30,7 +31,7 @@ export class CharactersComponent implements OnInit {
     this.characters = new Array<Character>();
     this.loadCharacters();  
     this.actualPage = 0;  
-
+    //TODO: mover a una directiva
     fromEvent(this.scrollableList.nativeElement, 'scroll').pipe(
       map((event: Event ) => {
       return event.target}),
@@ -44,7 +45,6 @@ export class CharactersComponent implements OnInit {
       this.marvelService.getCharacters(20, result).subscribe((response) => {
         //cargar datos en la busqueda
         this.suggestions = response.data.results;
-        console.log(this.suggestions);
       },
       (err) => {
         console.log(err);
@@ -80,11 +80,13 @@ export class CharactersComponent implements OnInit {
     this.actualPage++;
   }
 
+  search(){
+    this.charClicked(this.suggestions[0]);
+  }
 
   charClicked(character:Character){
     console.log(character);
     this.router.navigate([character.id,"comics"],{ queryParams: { charInfo: character.name } });
-    // Navigate to /results?page=1
 
   }
 

@@ -6,7 +6,7 @@
 </nav>
 <section class="comicsSection">
   <div id="comicsGrid">
-    <a *ngFor="let comic of comicsList">
+    <a *ngFor="let comic of comicsList" [routerLink]="['/comic/',comic.id]">
       <img src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt="No photo available" />
     </a>
   </div>
