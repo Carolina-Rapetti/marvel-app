@@ -1,56 +1,5 @@
-.charactersNav {
-    background-color: black;
-    color: dimgray;
-}
 
-.searchTerm {
-    padding: 3px;
-    margin: 5px;
-    border: 0px;
-    border-bottom: 2px solid dimgray;
-    background-color: black;
-    color: #FFFFFF;
-}
-button {
-    background-color: #000000;
-    color: #f5f4f2;
-}
 #charactersSection {
-    background-color: #e3e2e1;    
-    height: 1000px;
+    background-color: #e3e2e1;  
     
 } 
-#charactersList {
-    list-style: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px;
-    width: 50%;
-    height: 100%;
-    overflow: auto;
-    flex: none;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-}
-.itemCharList {
-    border-bottom: 1px solid #000000;
-    background-color: #f5f4f2;
-    padding: 10px;
-}
-li:hover {
-    border-color: #777;
-    box-shadow: 3px 3px 5px #333;
-    padding: 6px;
-}
-.cardChar {
-    padding: 15px;
-    display: flex;
-    
-}
-.cardChar h4 {
-    padding: 10px;
-    width: 80%;
-}
-.cardChar img {
-    padding: 5px;
-    width: 20%;
-}

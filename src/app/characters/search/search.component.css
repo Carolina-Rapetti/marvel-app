@@ -1,0 +1,39 @@
+.charactersNav {
+    background-color: black;
+    color: dimgray;
+}
+.searchTerm {
+    padding: 3px;
+    margin: 5px;
+    margin-bottom: 0px;
+    width: 20%;
+    border: 0px;
+    border-bottom: 2px solid dimgray;
+    background-color: black;
+    color: #FFFFFF;
+}
+
+ul {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    background-color: #e3e2e1;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 5px;
+    height: 100px;    
+    width: 20%;
+    overflow: auto;
+    position: absolute;
+}
+ul li {
+    background-color: #e3e2e1; 
+    color: #000000;
+    padding: 4px;
+    margin-left: 4px;    
+    border-bottom: 2px solid #d1d1d1;
+}
+li:hover {
+    border-color: #777;
+    box-shadow: 3px 3px 5px #333;
+    padding: 6px;
+}

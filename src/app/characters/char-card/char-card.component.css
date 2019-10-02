@@ -1,0 +1,13 @@
+.cardChar {
+    padding: 15px;
+    display: flex;
+    
+}
+.cardChar h4 {
+    padding: 10px;
+    width: 80%;
+}
+.cardChar img {
+    padding: 5px;
+    width: 20%;
+}

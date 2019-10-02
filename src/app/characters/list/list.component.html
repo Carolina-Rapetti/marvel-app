@@ -1,0 +1,5 @@
+<ul id="charactersList" *ngIf="list" appInfiniteScroller scrollPercent="80" [scrollCallback]="scrollCallback">
+    <li *ngFor="let item of list" class="itemList" (click)="onClick(item)">
+      <app-char-card [character]="item"></app-char-card>
+    </li>
+</ul>  

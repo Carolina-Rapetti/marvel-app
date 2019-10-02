@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiCharResponse } from '../interfaces/character';
 import { URL_CHARACTERS, API_PUBLIC_KEY, BASE_URL_MARVEL } from '../shared/constants';
 import { ApiComicResponse, Comic } from '../interfaces/comic';
+import { debounceTime, distinctUntilChanged, switchMap, filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,14 @@ export class MarvelService {
     const options = { params: params };
       
     return this.http.get<ApiCharResponse>(URL_CHARACTERS, options);
+  }
+
+  search(terms: Observable<string>){
+    return terms.pipe(
+      debounceTime(400),
+      distinctUntilChanged(),
+      filter(res => res.length>0),
+      switchMap(term => this.getCharacters(20, term)));
   }
 
   getComicByChar(id: string):Observable<ApiComicResponse>{

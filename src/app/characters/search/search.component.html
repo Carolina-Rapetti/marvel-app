@@ -1,0 +1,9 @@
+<nav class="charactersNav"> 
+  <input type="text" class="searchTerm" placeholder="Search character..." (keyup)="search($event.target.value)"/>
+  <ul *ngIf="results?.length>0" appClickoutside (handler)="onClick()">
+    <li *ngFor="let result of results | slice:0:9">
+      {{ result.name }}
+    </li>
+
+  </ul>
+</nav>
