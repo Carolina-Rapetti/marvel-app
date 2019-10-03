@@ -1,5 +1,9 @@
-<ul id="charactersList" *ngIf="list" appInfiniteScroller scrollPercent="80" [scrollCallback]="scrollCallback">
+<ul id="charactersList" *ngIf="list.length>0; else loading" appInfiniteScroller scrollPercent="80" [scrollCallback]="scrollCallback">
     <li *ngFor="let item of list" class="itemList" (click)="onClick(item)">
       <app-char-card [character]="item"></app-char-card>
     </li>
 </ul>  
+<ng-template #loading>
+  <h1 class="loading">Loading...</h1>
+  
+</ng-template>

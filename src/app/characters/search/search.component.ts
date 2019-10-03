@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Character } from 'src/app/interfaces/character';
 import { Subject, Subscription } from 'rxjs';
 import { MarvelService } from 'src/app/services/marvel.service';
@@ -10,6 +10,7 @@ import { MarvelService } from 'src/app/services/marvel.service';
 })
 export class SearchComponent implements OnInit, OnDestroy {
 
+  @Output() selected = new EventEmitter<Character>();
   results: Character[];
   searchTerm$ = new Subject<string>();
   private subscriptions: Subscription;
@@ -35,8 +36,12 @@ export class SearchComponent implements OnInit, OnDestroy {
       else this.results = [];
   }
 
-  onClick(){
+  clickedOutside(){
     this.results = [];
+  }
+
+  itemClicked(item: Character){
+    this.selected.emit(item);
   }
 
 }

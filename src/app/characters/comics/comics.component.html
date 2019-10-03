@@ -5,11 +5,13 @@
 </div>
 </nav>
 <section class="comicsSection">
-  <div id="comicsGrid">
+  <div id="comicsGrid" *ngIf="comicsList; else loading">
     <a *ngFor="let comic of comicsList" [routerLink]="['/comic/',comic.id]">
       <img src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt="No photo available" />
     </a>
   </div>
-  
+  <ng-template #loading>
+    <h1 class="loading">Loading...</h1>
+  </ng-template> 
 
 </section>

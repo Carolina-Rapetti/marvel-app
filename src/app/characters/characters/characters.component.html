@@ -1,4 +1,4 @@
-<app-search></app-search>
+<app-search (selected)="charClicked($event)"></app-search>
 <section id="charactersSection">
   <app-list (clicked)="charClicked($event)"></app-list>  
 </section>
